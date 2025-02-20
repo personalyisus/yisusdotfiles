@@ -108,7 +108,7 @@ esc = 'mode main'
 
 
 [gaps]
-outer.top = 25
+outer.top = 28
 outer.bottom = 20
 outer.left = 20
 outer.right = 20
