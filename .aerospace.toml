@@ -11,7 +11,7 @@ enable-normalization-opposite-orientation-for-nested-containers = false
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 
-accordion-padding = 0 
+accordion-padding = 2 
 
 
 # Run Sketchybar together with AeroSpace
@@ -24,6 +24,22 @@ exec-on-workspace-change = ['/bin/bash', '-c',
     'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE'
 ]
 
+[[on-window-detected]]
+  if.app-name-regex-substring = 'hatsapp'
+  run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+  if.app-name-regex-substring = 'ogseq'
+  run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+  if.app-name-regex-substring = 'potify'
+  run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+  if.app-name-regex-substring = 'lack'
+  run = 'move-node-to-workspace 2'
+
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 alt-enter = '''exec-and-forget osascript -e '
@@ -34,9 +50,9 @@ end tell'
 '''
 
 # i3 wraps focus by default
-alt-h =         'focus --boundaries-action wrap-around-the-workspace left'
-alt-j =         'focus --boundaries-action wrap-around-the-workspace down'
-alt-k =         'focus --boundaries-action wrap-around-the-workspace up'
+alt-h = 'focus --boundaries-action wrap-around-the-workspace left'
+alt-j = 'focus --boundaries-action wrap-around-the-workspace down'
+alt-k = 'focus --boundaries-action wrap-around-the-workspace up'
 alt-l = 'focus --boundaries-action wrap-around-the-workspace right'
 
 alt-shift-h = 'move left'
