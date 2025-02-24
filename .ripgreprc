@@ -1,0 +1,10 @@
+# Some things copied over from:
+# https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md#configuration-file
+
+# Add 'web' type.
+--type-add
+web:*.{html,css,js}*
+
+
+# ignore package-lock
+--glob=!package-lock.json

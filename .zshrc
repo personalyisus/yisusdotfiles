@@ -137,6 +137,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH:$HOME/go/bin:$HOME/zig/"
 
 
+#griprep path ENV variable
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 
 # pnpm
