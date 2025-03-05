@@ -116,6 +116,7 @@ source $ZSH/oh-my-zsh.sh
   alias top="glances"
 
   alias ls="eza"
+  alias docker="podman"
 
   mycd() {
     local temp_var ="$(/Users/jesusmarin/projects/personal/rust-cli-project-manager/target/release/rust-cli-project-manager "$1")"
