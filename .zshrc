@@ -21,7 +21,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_OPTS="--style full"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
