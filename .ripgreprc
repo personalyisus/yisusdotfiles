@@ -8,3 +8,14 @@ web:*.{html,css,js}*
 
 # ignore package-lock
 --glob=!package-lock.json
+
+
+# Yisusnote: Configurations copied from the apparent defaults on the
+# grep.rg_opts configurations from https://github.com/ibhagwan/fzf-lua
+--column
+--line-number
+--no-heading
+--color=always
+--smart-case
+--max-columns=4096
+-e
