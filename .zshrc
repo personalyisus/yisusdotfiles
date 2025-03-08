@@ -21,7 +21,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--style full"
+export FZF_DEFAULT_OPTS="--style full --border"
+export FZF_CTRL_R_OPTS="--border-label='Personalyisus: Command finder'"
+export FZF_CTRL_T_OPTS="--border-label='Personalyisus: Files finder'"
+export FZF_ALT_C_OPTS="--border-label='Personalyisus: Folder navigator'"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
