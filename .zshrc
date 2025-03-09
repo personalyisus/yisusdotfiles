@@ -121,6 +121,11 @@ source $ZSH/oh-my-zsh.sh
   alias ls="eza"
   alias docker="podman"
 
+  # Some aliases that can be useful with the fzf preview 
+  
+  #Display the list of branches and preview their commits
+  alias gb="git branch | fzf --preview=\"git log --oneline {+1}\""
+
   mycd() {
     local temp_var ="$(/Users/jesusmarin/projects/personal/rust-cli-project-manager/target/release/rust-cli-project-manager "$1")"
     cd "$resolved_path" || echo "Unable to change directory: $resolved_path" >&2
