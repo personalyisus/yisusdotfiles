@@ -126,13 +126,6 @@ source $ZSH/oh-my-zsh.sh
   #Display the list of branches and preview their commits
   alias gb="git branch | fzf --preview=\"git log --oneline {+1}\""
 
-  mycd() {
-    local temp_var ="$(/Users/jesusmarin/projects/personal/rust-cli-project-manager/target/release/rust-cli-project-manager "$1")"
-    cd "$resolved_path" || echo "Unable to change directory: $resolved_path" >&2
-    # echo "Going into $resolved_path"
-    # cd "/Users/jesusmarin/projects/"
-  }
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
