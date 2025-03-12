@@ -117,12 +117,16 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
   alias top="glances"
   alias ls="eza"
-  alias docker="podman"
+  # Podman doesnt work well with watching :(((((
+  # alias docker="podman"
 
   # Some aliases that can be useful with the fzf preview 
   
   #Display the list of branches and preview their commits
   alias gb="git branch | fzf --preview=\"git log --oneline {+1}\""
+
+  #Display the list of commits and then on select SHOW the commit
+  alias gshow="git log --oneline | fzf --multi --preview 'git show {+1}' --bind='enter:execute(git show {+1})'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
