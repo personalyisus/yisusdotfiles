@@ -7,6 +7,11 @@ font-family-italic = Hack Nerd Font Mono
 font-family-bold-italic = Hack Nerd Font Mono
 window-title-font-family = Hack Nerd Font Mono
 
+mouse-hide-while-typing = true
+
+background-opacity = 0.9
+background-blur = true
+
 
 ## My other configs
 command = "/opt/homebrew/bin/tmux new -As0"
