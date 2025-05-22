@@ -156,3 +156,6 @@ esac
 # Initialize zsh completions (added by deno install script)
 autoload -Uz compinit
 compinit
+
+#jujutsu 
+source <(jj util completion zsh)
