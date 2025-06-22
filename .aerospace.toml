@@ -40,6 +40,10 @@ exec-on-workspace-change = ['/bin/bash', '-c',
   if.app-name-regex-substring = 'lack'
   run = 'move-node-to-workspace 2'
 
+[[on-window-detected]]
+  if.window-title-regex-substring = "Developer Tools"
+  run = 'layout tiling'
+
 [mode.main.binding]
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 alt-enter = '''exec-and-forget osascript -e '
