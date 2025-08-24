@@ -14,10 +14,14 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top \ 
+sketchybar --bar position=top \
 height=30 \
-blur_radius=0 \
-color=0x40000000
+blur_radius=100 \
+color=0xA4000000 \
+margin=18 \
+corner_radius=20 \
+y_offset=5 \
+
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -54,10 +58,9 @@ for sid in $(aerospace list-workspaces --all); do
         icon.padding_right=5 \
         background.padding_right=0 \
         background.padding_left=0 \
-        background.color=0x39ffffff \
+        background.color=0x00000000 \
         background.corner_radius=5 \
         background.height=25 \
-        background.drawing=off \
         label.drawing=off \
         click_script="aerospace workspace $sid" \
         script="$PLUGIN_DIR/aerospace.sh $sid"
@@ -100,4 +103,5 @@ sketchybar --add item clock right \
 sketchybar --add item message center \
            --set message label="You should be working"
 ##### Force all scripts to run the first time (never do this in a script) #####
+
 sketchybar --update
