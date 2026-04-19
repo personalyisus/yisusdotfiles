@@ -47,24 +47,13 @@ sketchybar --default "${default[@]}"
 # https://nikitabobko.github.io/AeroSpace/goodies#show-aerospace-workspaces-in-sketchybar
 sketchybar --add event aerospace_workspace_change
 
-for sid in $(aerospace list-workspaces --all); do
-    sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-        icon="$sid" \
-        padding_left=0 \
-        padding_right=0 \
-        icon.padding_left=5 \
-        icon.padding_right=5 \
-        background.padding_right=0 \
-        background.padding_left=0 \
-        background.color=0x00000000 \
-        background.corner_radius=5 \
-        background.height=25 \
-        label.drawing=off \
-        click_script="aerospace workspace $sid" \
-        script="$PLUGIN_DIR/aerospace.sh $sid"
-done
+# Defer workspace item creation to aerospace.sh.
+# This avoids a race condition: if SketchyBar auto-starts (e.g. via brew
+# services) before AeroSpace is running, `aerospace list-workspaces --all`
+# returns nothing and no workspace items are created.  By delegating to the
+# plugin script (which also runs on every workspace-change event), items
+# are created as soon as AeroSpace is actually available.
+$PLUGIN_DIR/aerospace.sh init
 
 ##### Adding Left Items #####
 # We add some regular items to the left side of the bar, where
