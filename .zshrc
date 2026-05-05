@@ -19,13 +19,15 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Auto-update settings
 zstyle ':omz:update' mode auto
 
-# Fix zsh-vi-mode + zsh-syntax-highlighting compatibility
+# zsh-vi-mode: defer init to avoid clobbering gitstatus ZLE handlers
+# (prevents "No handler installed for fd 14" errors with p10k)
+ZVM_LINE_INIT_MODE=$ZVM_MODE_BLOCK  # Start in block/normal mode, not insert
 zvm_after_init() {
   ZSH_HIGHLIGHT_MAX_LENGTH=300
 }
 
-# Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
+# Plugins — zsh-vi-mode MUST be last for p10k compatibility
+plugins=(git zsh-autosuggestions zsh-vi-mode zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,3 +112,7 @@ if [[ ! -f "$_jj_completion_cache" || ( -f "$_jj_completion_cache" && -n "$(find
   jj util completion zsh >! "$_jj_completion_cache" 2>/dev/null
 fi
 [[ -f "$_jj_completion_cache" ]] && source "$_jj_completion_cache"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
