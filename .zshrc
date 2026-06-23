@@ -74,6 +74,11 @@ alias gb='git branch -a | fzf --preview="git log --oneline {1}" --bind="enter:ex
 alias gshow="git log --oneline | fzf --multi --preview 'git show {+1}' --bind='enter:execute(git show {+1})'"
 
 # ----------------------------------------------------------------------------
+# Secrets / API Keys (gitignored, never committed)
+# ----------------------------------------------------------------------------
+[[ -f "$HOME/.env" ]] && source "$HOME/.env"
+
+# ----------------------------------------------------------------------------
 # External Tool Initialization
 # ----------------------------------------------------------------------------
 # FZF

@@ -1,0 +1,5 @@
+# Secrets — never commit
+.env
+
+# macOS junk
+.DS_Store
